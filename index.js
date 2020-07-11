@@ -1,5 +1,5 @@
 import { fifaData } from './fifa.js';
-console.log(fifaData);
+// console.log(fifaData);
 
 
 // ⚽️ M  V P ⚽️ //
@@ -13,23 +13,57 @@ console.log(fifaData);
 (e) Winner of 2014 world cup final */
 
 
+function worldcup(array) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i]["Year"] === 2014 && array[i]["Stage"] === 'Final') {
+            console.log(array[i]["Home Team Name"])
+            console.log(array[i]["Away Team Name"])
+            console.log(array[i]["Home Team Goals"])
+            console.log(array[i]["Away Team Goals"])
+    
+        }
+    }
+}
+console.log("- - - Task 1")
+worldcup(fifaData)
+
+
 /* Task 2: Create a function called  getFinals that takes `data` as an argument and returns an array of objects with only finals data */
 
-function getFinals(/* code here */) {
+function getFinals(data) {
 
-    /* code here */
+const newArray = []
 
-};
+    for (let i = 0; i < data.length; i++) {
+        if (data[i]["Stage"] === "Final") {
+            console.log(data[i]["Stage"])
+            console.log(data[i]["Home Team Name"])
+        }
+    }
+    return newArray
+}
+
+  console.log("- - - task 2")
+getFinals(fifaData)
+
 
 /* Task 3: Implement a higher-order function called `getYears` that accepts the callback function `getFinals`, and returns an array called `years` containing all of the years in the dataset */
 
-function getYears(/* code here */) {
+function getYears(data) {
 
-    /* code here */
+    const newArray = []
 
-};
+    for (let i = 0; i < data.length; i++) {
+        if (data[i]["Stage"] === "Final") {
+            console.log(data[i]["Stage"])
+            console.log(data[i]["Home Team Name"])
+        }
+    }
+    return newArray
+}
 
-getYears();
+  console.log("- - - task 3")
+getYears(fifaData);
 
 /* Task 5: Implement a higher-order function called `getWinners`, that accepts the callback function `getFinals()` and determine the winner (home or away) of each `finals` game. Return the name of all winning countries in an array called `winners` */ 
 
